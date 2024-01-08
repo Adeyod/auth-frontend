@@ -78,7 +78,7 @@ const Navbar = () => {
             <div className="flex justify-between gap-4 uppercase">
               <div className="gap-5 hidden md:flex">
                 <Link to="/login">Login</Link>
-                <Link to="/login">Register</Link>
+                <Link to="/register">Register</Link>
               </div>
 
               <div>
