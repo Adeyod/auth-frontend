@@ -52,6 +52,7 @@ const Navbar = () => {
             <div className="flex justify-between gap-4 uppercase">
               <div className="gap-5 hidden md:flex">
                 <button onClick={handleLogout}>Logout</button>
+                <Link to="/payment">Payment</Link>
               </div>
 
               <div>
@@ -70,6 +71,7 @@ const Navbar = () => {
                   }
                 >
                   <button onClick={handleLogout}>Logout</button>
+                  <Link to="/payment">Payment</Link>
                 </div>
               </div>
             </div>
