@@ -23,7 +23,8 @@ const Verify = () => {
       const response = await fetch(
         // `http://localhost:2121/api/verify-email`,
         // `http://localhost:2121/api/verify-email/?user=${param.userId}&$token=${param.token}`
-        `https://auth-backend-d9n5.onrender.com/api/${param.userId}/verify-email/${param.token}`,
+        // `https://auth-backend-d9n5.onrender.com/api/${param.userId}/verify-email/${param.token}`,
+        `https://auth-backend-d9n5.onrender.com/api/verify-email`,
         {
           method: 'POST',
           headers: {
