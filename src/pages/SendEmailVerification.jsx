@@ -22,7 +22,8 @@ const SendEmailVerification = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post('http://localhost:2121/api/resend-email', formData)
+      .post('https://auth-backend-d9n5.onrender.com/api/resend-email', formData)
+      // .post('http://localhost:2121/api/resend-email', formData)
       .then((result) => {
         setLoading(false);
         if (result.data.success === true) {

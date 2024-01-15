@@ -20,7 +20,8 @@ const Navbar = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:2121/api/logout',
+        'https://auth-backend-d9n5.onrender.com/api/logout',
+        // 'http://localhost:2121/api/logout',
         {},
         {
           withCredentials: true, // Ensure credentials are included

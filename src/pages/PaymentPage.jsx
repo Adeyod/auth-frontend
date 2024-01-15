@@ -17,7 +17,8 @@ const PaymentPage = () => {
     e.preventDefault();
     try {
       axios
-        .post('http://localhost:2121/api/payment', formData)
+        .post('https://auth-backend-d9n5.onrender.com/api/payment', formData)
+        // .post('http://localhost:2121/api/payment', formData)
         .then((result) => {
           console.log(result);
         })

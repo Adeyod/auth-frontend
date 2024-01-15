@@ -27,7 +27,8 @@ const Login = () => {
       console.log(formData);
       dispatch(loginStart());
       await axios
-        .post('http://localhost:2121/api/login', formData)
+        .post('https://auth-backend-d9n5.onrender.com/api/login', formData)
+        // .post('http://localhost:2121/api/login', formData)
         .then((result) => {
           console.log('result.data:', result.data);
           const { user, message, success } = result.data;
@@ -40,7 +41,7 @@ const Login = () => {
           }
 
           dispatch(loginFailure());
-          toast(message)
+          toast(message);
           return;
         })
         .catch((err) => {

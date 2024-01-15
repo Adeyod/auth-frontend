@@ -31,13 +31,17 @@ const Register = () => {
         return;
       }
       dispatch(registerStart());
-      const response = await fetch('http://localhost:2121/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        'https://auth-backend-d9n5.onrender.com/api/register',
+        // 'http://localhost:2121/api/register',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
       if (!data.success) {
