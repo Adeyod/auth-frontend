@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const SendEmailVerificationLink = () => {
+const SendEmailVerification = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [formData, setFormData] = useState('');
@@ -73,4 +73,4 @@ const SendEmailVerificationLink = () => {
   );
 };
 
-export default SendEmailVerificationLink;
+export default SendEmailVerification;
