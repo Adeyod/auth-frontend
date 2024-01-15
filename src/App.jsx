@@ -24,7 +24,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/verification/:userId/:token" element={<Verify />} />
+        <Route path="/verification" element={<Verify />} />
+        {/* <Route path="/verification/:userId/:token" element={<Verify />} /> */}
       </Routes>
     </div>
   );
