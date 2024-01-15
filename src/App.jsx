@@ -6,11 +6,10 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import PaymentPage from './pages/PaymentPage';
 import SendEmailVerification from './pages/SendEmailVerification';
-import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import NotFound from './pages/NotFound';
 
 const App = () => {
-  const { currentUser } = useSelector((state) => state.user);
   return (
     <div>
       <Navbar />
@@ -23,8 +22,9 @@ const App = () => {
         </Route>
         <Route path="/send-email" element={<SendEmailVerification />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/:userId/:token" element={<Verify />} />
+        <Route path="/verification/:userId/:token" element={<Verify />} />
       </Routes>
     </div>
   );

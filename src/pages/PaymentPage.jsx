@@ -11,7 +11,8 @@ const PaymentPage = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  console.log(formData);
+  const amount = parseInt(formData.number);
+  console.log(typeof amount);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +22,12 @@ const PaymentPage = () => {
         // .post('http://localhost:2121/api/payment', formData)
         .then((result) => {
           console.log(result);
+          if (result.status === 200) {
+            window.open(result.data.others.redirect_url);
+          } else {
+            console.log(result.status);
+            return;
+          }
         })
         .catch((err) => {
           console.log(err);

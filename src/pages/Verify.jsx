@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { GoVerified } from 'react-icons/go';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
@@ -9,11 +9,31 @@ const Verify = () => {
   const param = useParams();
   const [verifyEmail, setVerifyEmail] = useState(false);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   const handleVerification = async () => {
+    const searchParams = new URLSearchParams(location.search);
+
     try {
+      const userId = searchParams.get('userId');
+      const token = searchParams.get('token');
+      console.log(userId);
+      console.log(token);
+
       const response = await fetch(
-        `http://localhost:2121/api/${param.userId}/verify-email/${param.token}`
+        // `http://localhost:2121/api/verify-email`,
+        // `http://localhost:2121/api/verify-email/?user=${param.userId}&$token=${param.token}`
+        `https://auth-backend-d9n5.onrender.com/api/${param.userId}/verify-email/${param.token}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userId,
+            token,
+          }),
+        }
       );
       const data = await response.json();
       setLoading(false);
