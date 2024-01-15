@@ -5,6 +5,7 @@ import Verify from './pages/Verify';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import SendEmailVerificationLink from './pages/sendEmailVerificationLink';
+import PaymentPage from './pages/PaymentPage';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/payment" element={<PaymentPage />} />
         <Route path="/send-email" element={<SendEmailVerificationLink />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

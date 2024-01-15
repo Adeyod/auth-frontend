@@ -38,6 +38,10 @@ const Login = () => {
             navigate('/');
             return;
           }
+
+          dispatch(loginFailure());
+          toast(message)
+          return;
         })
         .catch((err) => {
           console.log(err);
